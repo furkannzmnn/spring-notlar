@@ -1,0 +1,26 @@
+SPRİNG BOOT LIFECYCLE
+
+RESTCONTROLLER
+
+Bir sınıfa @RestController annotation'ı eklemek, bu sınıfın Spring Framework tarafından bir RESTful web servisi olarak kullanılacağını belirtir. Bu sınıf, HTTP isteklerini işleyebilir ve HTTP yanıtlarını oluşturabilir.
+
+@RestController annotation'ı, Spring Framework tarafından otomatik olarak @Controller annotation'ı ile birleştirilir ve bu sınıfın bir web kontrolörü olduğunu belirtir. Ayrıca, @RestController annotation'ı, Spring Framework tarafından yönetilen bileşenlerin tanımlanması için @Component annotation'ı ile işaretlenmiş bir sınıfın tüm özelliklerini de taşır.
+
+Bir @RestController sınıfı, Spring Framework tarafından yönetilen bir bileşen olarak tanımlanır ve Spring Framework, HTTP isteklerini bu bileşen üzerinden yönlendirir. Böylece, bir RESTful web servisinin tüm özelliklerini kolayca kullanabiliriz.
+
+Spring Framework'te, @RestController annotation'ı ile işaretlenmiş sınıfların yönetimi, Spring MVC (Model-View-Controller) modülü tarafından sağlanır.
+
+Bir POST isteği geldiğinde Spring Framework, POST isteğiyle ilişkili metodu çağırmak için bir dizi sınıf kullanır. Aşağıdaki adımlar, bir POST isteği sırasında çalışan ana Spring sınıflarını özetler:
+
+İstek, WebContainer'ın DispatcherServlet sınıfına gönderilir.
+DispatcherServlet, isteğin URI'sini inceleyerek, hangi Controller sınıfının ilgili istek için sorumlu olduğunu belirler.
+Controller sınıfı, ilgili metodu çağırır ve POST isteğine yanıt olarak bir ResponseEntity döndürür.
+Döndürülen ResponseEntity, DispatcherServlet tarafından uygun bir HTTP yanıtı olarak oluşturulur ve istemciye gönderilir.
+İsteğin işlenmesi sırasında, Spring Framework ayrıca diğer sınıflar da kullanabilir, örneğin:
+1- DispatcherServlet, gelen istekleri işlemek ve uygun sınıfları ve metodları çağırmak için kullanılır.
+2- HandlerMapping, gelen isteğin URL'sine göre hangi sınıfın işlem yapacağını belirler.
+3- HandlerAdapter, belirlenen sınıfın metodunu çağırmak için kullanılır. ViewResolver, sınıfın dönüş değerini nasıl göstereceğini belirler.
+
+------------------------------------------------------------
+
+ENTITY
